@@ -1,0 +1,7 @@
+Metric,Value
+KB Weighted F1-Score,0.5435
+KB Critical Recall,0.5604
+Bayesian CV Mean Accuracy,0.6994
+Bayesian CV Mean F1-Macro,0.4997
+CSP Optimal Feasibility Rate (%),100.0
+CSP Avg Solver Time (ms),21.97

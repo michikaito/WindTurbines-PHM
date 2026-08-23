@@ -1,0 +1,11 @@
+pandas
+numpy
+scikit-learn
+scipy
+pgmpy
+ortools
+matplotlib
+seaborn
+pyDatalog
+python-constraint
+tqdm
