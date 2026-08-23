@@ -1,7 +1,9 @@
 # KARE: Knowledge-Aware Reasoning Engine for Wind Turbine PHM
 
 **Creatore:** Michele Carbonara
+
 **Matricola:** 802895
+
 **Insegnamento:** Ingegneria della Conoscenza - anno accademico 2025/2026
 
 
