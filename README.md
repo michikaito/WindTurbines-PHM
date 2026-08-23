@@ -17,7 +17,7 @@
 
 ### 1. Clonazione del repository
 ```bash
-git clone [https://github.com/michikaito/WindTurbines.git](https://github.com/michikaito/WindTurbines.git)
+git clone [https://github.com/michikaito/WindTurbines-PHM.git](https://github.com/michikaito/WindTurbines-PHM.git)
 cd WindTurbines
 ```
 
