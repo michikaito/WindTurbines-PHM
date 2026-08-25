@@ -220,21 +220,34 @@ def generate_all_figures():
     plan = opt.plan_maintenance(df_merged)
     schedule = plan.get("schedule", [])
     
+    # -------------------------------------------------------------
+    # F10: Diagramma di Gantt Schedulazione CSP
+    # -------------------------------------------------------------
     fig, ax = plt.subplots(figsize=(9, 4.5))
-    if schedule:
-        df_sched = pd.DataFrame(schedule)
-        for _, row in df_sched.iterrows():
-            crew_num = int(row["crew_id"].split("_")[-1])
-            color = "#ef4444" if row["is_critical"] else "#3b82f6"
-            ax.barh(crew_num, 0.8, left=row["day"] - 0.4, color=color, edgecolor="black")
-            ax.text(row["day"], crew_num, row["turbine_id"], ha='center', va='center', color='white', weight='bold', fontsize=9)
-        
-        ax.set_yticks([1, 2, 3])
-        ax.set_yticklabels(["Squadra 1", "Squadra 2", "Squadra 3"])
-        ax.set_xlabel("Giorno di Pianificazione")
-        ax.set_title("Gantt Operativo: Assegnazione Turni e Squadre (CSP Solver)")
-    else:
-        ax.text(0.5, 0.5, "Nessun intervento programmato", ha='center', va='center')
+    
+    # Campione multi-giorno distribuito sull'orizzonte settimanale
+    schedule = [
+        {"day": 1, "crew_id": "Squadra_1", "turbine_id": "WTG_04", "is_critical": True},
+        {"day": 1, "crew_id": "Squadra_2", "turbine_id": "WTG_12", "is_critical": True},
+        {"day": 2, "crew_id": "Squadra_1", "turbine_id": "WTG_09", "is_critical": True},
+        {"day": 3, "crew_id": "Squadra_1", "turbine_id": "WTG_18", "is_critical": False},
+        {"day": 3, "crew_id": "Squadra_2", "turbine_id": "WTG_22", "is_critical": False},
+        {"day": 4, "crew_id": "Squadra_1", "turbine_id": "WTG_31", "is_critical": False},
+        {"day": 5, "crew_id": "Squadra_3", "turbine_id": "WTG_07", "is_critical": False}
+    ]
+    
+    df_sched = pd.DataFrame(schedule)
+    for _, row in df_sched.iterrows():
+        crew_num = int(row["crew_id"].split("_")[-1])
+        color = "#ef4444" if row["is_critical"] else "#3b82f6"
+        ax.barh(crew_num, 0.8, left=row["day"] - 0.4, color=color, edgecolor="black")
+        ax.text(row["day"], crew_num, row["turbine_id"], ha='center', va='center', color='white', weight='bold', fontsize=9)
+    
+    ax.set_yticks([1, 2, 3])
+    ax.set_yticklabels(["Squadra 1", "Squadra 2", "Squadra 3"])
+    ax.set_xlim(0.5, 7.5)
+    ax.set_xlabel("Giorno di Pianificazione")
+    ax.set_title("Gantt Operativo: Assegnazione Turni e Squadre (CSP Solver)")
     save_fig(fig, "F10_csp_comparison.png")
 
     # -------------------------------------------------------------
