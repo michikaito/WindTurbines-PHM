@@ -72,34 +72,4 @@ python cv_balanced_validation.py
 Il confronto avviene con DummyClassifier, Logistic Regression, Decision Tree e Gaussian Naive Bayes sullo stesso split GroupKFold, calcolando F1-Macro e Balanced Accuracy mediate con deviazione standard.
 
 
-### 6. Generazione Figure per la Documentazione (`generate_docs.py`)
-Genera tutti gli 11 grafici in formato PNG:
-
-```bash
-python generate_docs_assets.py
-```
-
-I grafici vengono salvati in outputs/:
-
-- F1_architecture_kare.png (Architettura del sistema)
-
-- F2_evidence_pipeline.png (Matrice di correlazione SCADA)
-
-- F3_rul_failure_distribution.png (Distribuzione RUL per classi)
-
-- F4_rul_curves_multiple_engines.png (Curve di degrado della flotta)
-
-- F5_sensor_rolling_zscore.png (Deriva termica e Z-Score mobile)
-
-- F6_kb_rule_graph.png (Grafo attivazione regole KB)
-
-- F7_bayesian_network_structure.png (Topologia causale del DAG Bayesiano)
-
-- F8_bayes_comparison.png (Andamento temporale del Failure Risk Score)
-
-- F9_csp_schema.png (Schema dei vincoli e funzione di costo CSP)
-
-- F10_csp_comparison.png (Diagramma di Gantt operativo delle squadre)
-
-- F11_groupkfold_schema.png (Schema GroupKFold anti-leakage)
 
