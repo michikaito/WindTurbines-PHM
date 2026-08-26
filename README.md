@@ -29,6 +29,12 @@ pip install -r requirements.txt
 ```
 
 ### 3. Esecuzione della pipeline principale
+Prima di tutto occorre spostarsi sulla cartella contenente il codice sorgente:
+```bash
+cd src
+```
+
+Da qui possiamo mandare il comando:
 ```bash
 python main.py
 ```

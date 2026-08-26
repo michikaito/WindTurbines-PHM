@@ -1,0 +1,4 @@
+day,crew_id,turbine_id,is_critical,wind_forecast_ms,estimated_rul_hours,risk_score
+1,Crew_1,WTG_01,True,9.31,0.0,1.0
+1,Crew_2,WTG_02,True,9.31,0.0,1.0
+1,Crew_3,WTG_03,True,9.31,0.0,1.0
